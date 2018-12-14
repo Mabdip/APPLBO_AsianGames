@@ -353,14 +353,14 @@ public class FormDataOperator extends javax.swing.JFrame {
         String nama_operator = txtNama.getText();
         String email_operator = txtEmail.getText();
         String alamat_operator = txtAlamat.getText();
-        String divisi_operator = txtDivisi.getText();
+        String devisi_operator = txtDivisi.getText();
 
         boolean hasil_cek = cek(); //dibuat agar jop tidak berulang.
         
         if(hasil_cek && ImgPath != null)
         {
             crud std = new crud();
-            std.crudOperator('u',id_operator, nama_operator, email_operator, alamat_operator, divisi_operator,ImgPath);
+            std.crudOperator('u',id_operator, nama_operator, email_operator, alamat_operator, devisi_operator,ImgPath);
             
             TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
             std.fillOperatorTabel(TampilanManageOperator.tblOperator, "");
@@ -369,7 +369,7 @@ public class FormDataOperator extends javax.swing.JFrame {
         else if(hasil_cek && ImgPath == null)
         {
             crud std = new crud();
-            std.crudOperator('u', id_operator, nama_operator, email_operator, alamat_operator, divisi_operator,ImgPath);
+            std.crudOperator('u', id_operator, nama_operator, email_operator, alamat_operator, devisi_operator,ImgPath);
             
            TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
             std.fillOperatorTabel(TampilanManageOperator.tblOperator, "");

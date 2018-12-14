@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class crud {
     public void crudOperator(char operation, String id_operator,String nama_operator, String email_operator, String pass_operator,
-            String alamat_operator, String divisi_operator, String ImgPath)
+            String alamat_operator, String devisi_operator, String ImgPath)
     {
         Connection con = koneksiDB.getConnection();
         PreparedStatement ps;
@@ -45,7 +45,7 @@ public class crud {
                 ps.setString(2, nama_operator);
                 ps.setString(3, email_operator);
                 ps.setString(4, alamat_operator);
-                ps.setString(5, divisi_operator);
+                ps.setString(5, devisi_operator);
                 ps.setBlob(6, img);
                 
                 
@@ -69,7 +69,7 @@ public class crud {
                     ps.setString(1, nama_operator);
                     ps.setString(2, email_operator);
                     ps.setString(3, alamat_operator);
-                    ps.setString(4, divisi_operator);
+                    ps.setString(4, devisi_operator);
                 
 
                     if(ps.executeUpdate() > 0)
@@ -94,7 +94,7 @@ public class crud {
                     ps.setString(1, nama_operator);
                     ps.setString(2, email_operator);
                     ps.setString(3, alamat_operator);
-                    ps.setString(4, divisi_operator);
+                    ps.setString(4, devisi_operator);
                     ps.setBlob(5, img);
                     if(ps.executeUpdate() > 0)
                     {
@@ -172,7 +172,7 @@ public class crud {
         PreparedStatement ps;
         //System.out.println("%"+valueToSearch+"%");
         try {
-            ps = con.prepareStatement("select * from operator where concat(id_operator,nama_operator,email_operator,alamat_operator,password_operator) like ?");
+            ps = con.prepareStatement("select * from operator where concat(id_operator,nama_operator,email_operator,password_operator,alamat_operator,devisi_operator) like ?");
             ps.setString(1, "%"+valueToSearch+"%");
             
             ResultSet rs = ps.executeQuery();
@@ -187,6 +187,8 @@ public class crud {
                 row[1] = rs.getString(2);
                 row[2] = rs.getString(3);
                 row[3] = rs.getString(4);
+                row[4] = rs.getString(5);
+                row[5] = rs.getString(6);
                 model.addRow(row);
             }
         } 

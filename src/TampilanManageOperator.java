@@ -32,6 +32,7 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         tblOperator.setShowGrid(true);
         tblOperator.setGridColor(Color.green);
         tblOperator.setSelectionBackground(Color.black);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -58,6 +59,7 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,13 +126,13 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         tblOperator.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         tblOperator.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nama", "Email", "Alamat", "Divisi"
+                "ID", "Nama", "Email", "Password", "Alamat", "Divisi"
             }
         ));
         tblOperator.addMouseListener(new java.awt.event.MouseAdapter() {
