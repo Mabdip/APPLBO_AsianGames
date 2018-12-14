@@ -362,8 +362,8 @@ public class FormDataOperator extends javax.swing.JFrame {
             crud std = new crud();
             std.crudOperator('u',id_operator, nama_operator, email_operator, alamat_operator, divisi_operator,ImgPath);
             
-            TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
-            std.fillOperatorTabel(TampilanManageOperator.tblOperator, "");
+            TampilanManageOperator.jTable1.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
+            std.fillOperatorTabel(TampilanManageOperator.jTable1, "");
             this.dispose();
         }
         else if(hasil_cek && ImgPath == null)
@@ -371,8 +371,8 @@ public class FormDataOperator extends javax.swing.JFrame {
             crud std = new crud();
             std.crudOperator('u', id_operator, nama_operator, email_operator, alamat_operator, divisi_operator,ImgPath);
             
-           TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
-            std.fillOperatorTabel(TampilanManageOperator.tblOperator, "");
+           TampilanManageOperator.jTable1.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
+            std.fillOperatorTabel(TampilanManageOperator.jTable1, "");
             this.dispose();
         }
     }//GEN-LAST:event_btnEditActionPerformed

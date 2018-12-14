@@ -25,8 +25,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Angga
  */
 public class crud {
-    public void crudOperator(char operation, String id_operator,String nama_operator, String email_operator, String pass_operator,
-            String alamat_operator, String divisi_operator, String ImgPath)
+    public void crudOperator(char operation,String id_operator, String nama_operator, String email_operator,
+            String alamat_operator, String divisi_operator, String pass_operator, String ImgPath)
     {
         Connection con = koneksiDB.getConnection();
         PreparedStatement ps;
@@ -40,12 +40,13 @@ public class crud {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(crud.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ps = con.prepareStatement("insert into operator (id_operator,nama_operator, alamat_operator, alamat_operator, foto_operator) values (?,?,?,?,?)");
-                ps.setString(1, id_operator);
-                ps.setString(2, nama_operator);
-                ps.setString(3, email_operator);
-                ps.setString(4, alamat_operator);
-                ps.setString(5, divisi_operator);
+                ps = con.prepareStatement("insert into operator (nama_operator, email_operator, alamat_operator,devisi_operator,password_operator, foto_operator) values (?,?,?,?,?,?)");
+                //ps.setString(1, id_operator);
+                ps.setString(1, nama_operator);
+                ps.setString(2, email_operator);
+                ps.setString(3, alamat_operator);
+                ps.setString(4, divisi_operator);
+                ps.setString(5, pass_operator);
                 ps.setBlob(6, img);
                 
                 
@@ -172,7 +173,7 @@ public class crud {
         PreparedStatement ps;
         //System.out.println("%"+valueToSearch+"%");
         try {
-            ps = con.prepareStatement("select * from operator where concat(id_operator,nama_operator,email_operator,alamat_operator,password_operator) like ?");
+            ps = con.prepareStatement("select * from operator where concat(id_operator,nama_operator,email_operator,alamat_operator,password_operator,devisi_operator) like ?");
             ps.setString(1, "%"+valueToSearch+"%");
             
             ResultSet rs = ps.executeQuery();
@@ -182,12 +183,14 @@ public class crud {
             
             while(rs.next())
             {
-                row = new Object[9];
-                row[0] = rs.getString(1);
+                row = new Object[6];
+                row[0] = rs.getString(1);                
                 row[1] = rs.getString(2);
                 row[2] = rs.getString(3);
-                row[3] = rs.getString(4);
-                model.addRow(row);
+                row[3] = rs.getString(5);
+                row[4] = rs.getString(6);
+                row[5] = rs.getString(4);
+                model.addRow(row);                
             }
         } 
         catch (SQLException ex) {
@@ -215,7 +218,5 @@ public class crud {
         return pic;
     }
 
-    void crudOperator(char c, String id_operator, String nama_operator, String email_operator, String alamat_operator, String divisi_operator, String ImgPath) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }

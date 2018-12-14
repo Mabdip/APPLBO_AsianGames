@@ -61,26 +61,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lblMinim" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblClose" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="352" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblClose" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblMinim" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
@@ -98,40 +86,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Operator"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblClose">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="sansserif" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="cc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="X"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblCloseMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblMinim">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="sansserif" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="-"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblMinimMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -152,26 +106,21 @@
                           <Component id="lblSearch" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtSearch" min="-2" pref="553" max="-2" attributes="0"/>
-                          <EmptySpace pref="187" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="btnDelete" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="btnEdit" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="btnAdd" min="-2" pref="86" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="btnDelete" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnEdit" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btnAdd" min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ScrollBar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -193,7 +142,6 @@
                   </Group>
                   <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
-              <Component id="ScrollBar" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -220,7 +168,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tblOperator">
+            <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="ff" type="rgb"/>
@@ -229,16 +177,22 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="4">
-                    <Column editable="true" title="ID" type="java.lang.Object"/>
-                    <Column editable="true" title="Nama" type="java.lang.Object"/>
-                    <Column editable="true" title="Email" type="java.lang.Object"/>
-                    <Column editable="true" title="Alamat" type="java.lang.Object"/>
-                    <Column editable="true" title="Divisi" type="java.lang.Object"/>
+                  <Table columnCount="6" rowCount="0">
+                    <Column editable="false" title="ID" type="java.lang.Object"/>
+                    <Column editable="false" title="Nama" type="java.lang.Object"/>
+                    <Column editable="false" title="Email" type="java.lang.Object"/>
+                    <Column editable="false" title="Alamat" type="java.lang.Object"/>
+                    <Column editable="false" title="Divisi" type="java.lang.Object"/>
+                    <Column editable="false" title="Password" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="50" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -271,8 +225,8 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblOperatorMouseClicked"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tblOperatorKeyReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTable1KeyReleased"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -280,8 +234,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JScrollBar" name="ScrollBar">
-        </Component>
         <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
