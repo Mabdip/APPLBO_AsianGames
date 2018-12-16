@@ -222,7 +222,7 @@ public class FormLogin extends javax.swing.JFrame {
                         a.setVisible(true);
                         a.pack();
                         a.setLocationRelativeTo(null);
-                        a.lblWelcome.setText("Welcome"+ Email);
+                        a.lblWelcome.setText("Welcome "+ Email);
                     this.dispose();
                     
                 }

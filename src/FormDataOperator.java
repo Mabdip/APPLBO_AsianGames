@@ -102,7 +102,7 @@ public class FormDataOperator extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Data Operator");
+        jLabel1.setText("Data Volunteer");
 
         lblNama.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lblNama.setForeground(new java.awt.Color(255, 255, 255));
@@ -360,7 +360,7 @@ public class FormDataOperator extends javax.swing.JFrame {
         if(hasil_cek && ImgPath != null)
         {
             crud std = new crud();
-            std.crudOperator('u',id_operator, nama_operator, email_operator, alamat_operator, devisi_operator,ImgPath);
+            std.crudOperatorall('u',id_operator, nama_operator, email_operator, alamat_operator, devisi_operator,ImgPath);
             
             TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"NIM","Nama","Alamat","Telepon","Tempat Lahir","Tanggal Lahir","Jenis Kelamin","Agama","Keterangan"}));
             std.fillOperatorTabel(TampilanManageOperator.tblOperator, "");

@@ -22,9 +22,10 @@ public class TampilanManageOperator extends javax.swing.JFrame {
      */
     crud crud = new crud();
     DefaultTableModel model;
-    int RowIndex;
+    int rowIndex;
+    
     public TampilanManageOperator() {
-        
+        this.setLocationRelativeTo(null);
         initComponents();
         crud.fillOperatorTabel(tblOperator, "");
         model = (DefaultTableModel)tblOperator.getModel();
@@ -32,7 +33,7 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         tblOperator.setShowGrid(true);
         tblOperator.setGridColor(Color.green);
         tblOperator.setSelectionBackground(Color.black);
-        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -126,13 +127,10 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         tblOperator.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         tblOperator.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Nama", "Email", "Password", "Alamat", "Divisi"
+                "ID", "Nama", "Email", "Alamat", "Divisi", "Foto"
             }
         ));
         tblOperator.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -147,7 +145,7 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblOperator);
 
-        btnDelete.setBackground(new java.awt.Color(153, 255, 153));
+        btnDelete.setBackground(new java.awt.Color(0, 204, 153));
         btnDelete.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +154,7 @@ public class TampilanManageOperator extends javax.swing.JFrame {
             }
         });
 
-        btnEdit.setBackground(new java.awt.Color(153, 255, 153));
+        btnEdit.setBackground(new java.awt.Color(0, 204, 153));
         btnEdit.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -165,9 +163,9 @@ public class TampilanManageOperator extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(153, 255, 153));
+        btnAdd.setBackground(new java.awt.Color(0, 204, 153));
         btnAdd.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        btnAdd.setText("Add");
+        btnAdd.setText("ADD");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -181,24 +179,25 @@ public class TampilanManageOperator extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(lblSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addContainerGap()
+                                .addComponent(jScrollPane1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(lblSearch)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 181, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(ScrollBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -210,12 +209,12 @@ public class TampilanManageOperator extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
                     .addComponent(btnEdit)
                     .addComponent(btnAdd))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addComponent(ScrollBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -250,15 +249,44 @@ public class TampilanManageOperator extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_lblMinimMouseClicked
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-         
+    private void tblOperatorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblOperatorKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN)
+            rowIndex = tblOperator.getSelectedRow();
+    }//GEN-LAST:event_tblOperatorKeyReleased
+
+    private void tblOperatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOperatorMouseClicked
+            rowIndex = tblOperator.getSelectedRow();
+    }//GEN-LAST:event_tblOperatorMouseClicked
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+                                                 
         boolean cek = tblOperator.getSelectionModel().isSelectionEmpty();
-        String[] parts;
-        if(cek){
+        if(cek)
+        {
             JOptionPane.showMessageDialog(null, "tidak ada data yang dipilih");
         }
-        else{
-            TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"ID","Nama","Email","Alamat","Divisi"}));
+        else
+        {
+            crud.fillOperatorTabel(tblOperator, "");
+            model = (DefaultTableModel)tblOperator.getModel();
+            crud.crudOperatorall('d', model.getValueAt(rowIndex, 0).toString(), null, null, null,null,null);
+        
+            TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"ID","Nama","Email","Alamat","Divisi","Foto"}));
+            crud.fillOperatorTabel(TampilanManageOperator.tblOperator, "");
+        }
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        boolean cek = tblOperator.getSelectionModel().isSelectionEmpty();
+        String[] parts;
+        if(cek)
+        {
+            JOptionPane.showMessageDialog(null, "tidak ada data yang dipilih");
+        }
+        else
+        {
+            TampilanManageOperator.tblOperator.setModel(new DefaultTableModel(null,new Object[]{"ID","Nama","Email","Alamat","Divisi","Foto"}));
             crud.fillOperatorTabel(tblOperator, "");
             model = (DefaultTableModel)tblOperator.getModel();
             FormDataOperator fdo = new FormDataOperator();
@@ -267,33 +295,21 @@ public class TampilanManageOperator extends javax.swing.JFrame {
             fdo.setLocationRelativeTo(null);
             fdo.home.setVisible(false);
             fdo.logout.setVisible(false);
- 
+            
             fdo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             FormDataOperator.btnAdd.setVisible(false);
-            FormDataOperator.txtId.setText(model.getValueAt(RowIndex, 0).toString());
+            FormDataOperator.txtId.setText(model.getValueAt(rowIndex, 0).toString());
             FormDataOperator.txtId.setEditable(false);
-            FormDataOperator.txtNama.setText(model.getValueAt(RowIndex, 1).toString());
-            FormDataOperator.txtAlamat.setText(model.getValueAt(RowIndex, 2).toString());
-            FormDataOperator.txtDivisi.setText(model.getValueAt(RowIndex, 3).toString());
-            FormDataOperator.lblGambar.setIcon(fdo.ResizeImage(null, crud.getimg(model.getValueAt(RowIndex, 0).toString())));    
+            FormDataOperator.txtNama.setText(model.getValueAt(rowIndex, 1).toString());
+            FormDataOperator.txtEmail.setText(model.getValueAt(rowIndex, 2).toString());
+            FormDataOperator.txtAlamat.setText(model.getValueAt(rowIndex, 3).toString());
+            FormDataOperator.txtDivisi.setText(model.getValueAt(rowIndex, 4).toString());
+            //FormDataOperator.lblGambar.setIcon(fdo.ResizeImage(null, crud.getimg(model.getValueAt(rowIndex, 0).toString())));    
         }
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void tblOperatorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblOperatorKeyReleased
-        if(evt.getKeyCode() == KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN)
-            RowIndex = tblOperator.getSelectedRow();
-    }//GEN-LAST:event_tblOperatorKeyReleased
-
-    private void tblOperatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOperatorMouseClicked
-            RowIndex = tblOperator.getSelectedRow();
-    }//GEN-LAST:event_tblOperatorMouseClicked
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-     
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        FormDataOperator fdo = new FormDataOperator();
+       FormDataOperator fdo = new FormDataOperator();
         fdo.setVisible(true);
         fdo.pack();
         fdo.setLocationRelativeTo(null);

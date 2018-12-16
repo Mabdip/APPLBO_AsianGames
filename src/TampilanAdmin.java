@@ -163,11 +163,12 @@ public class TampilanAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseClicked
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
-        this.dispose();
-        TampilanManageOperator mo = new TampilanManageOperator();
-        mo.setVisible(true);
-        mo.pack();
-        mo.setLocationRelativeTo(null);
+         this.dispose();
+        TampilanManageOperator tmo = new TampilanManageOperator();        
+        tmo.setVisible(true);
+        tmo.pack();
+        tmo.setLocationRelativeTo(null);
+        tmo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }//GEN-LAST:event_btnManageActionPerformed
 
     private void btnSettingPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingPassActionPerformed

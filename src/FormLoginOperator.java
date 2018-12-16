@@ -1,5 +1,11 @@
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -66,6 +72,11 @@ public class FormLoginOperator extends javax.swing.JFrame {
         btnLoginOperator.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnLoginOperator.setForeground(new java.awt.Color(255, 255, 255));
         btnLoginOperator.setText("Login");
+        btnLoginOperator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginOperatorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -173,6 +184,40 @@ public class FormLoginOperator extends javax.swing.JFrame {
     private void lblMinimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimMouseClicked
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_lblMinimMouseClicked
+
+    private void btnLoginOperatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginOperatorActionPerformed
+        PreparedStatement ps;
+        ResultSet rs;
+        
+        String Email = txtEmailOperator.getText();
+        String Password = String.valueOf(txtPassOperator.getPassword());
+        String query = "SELECT * FROM `operator` WHERE `email_operator`=? AND `password_operator`=?";
+        
+        
+        try {
+            ps = koneksiDB.getConnection().prepareStatement(query);
+            ps.setString(1, Email);
+            ps.setString(2, Password);
+            
+            rs = ps.executeQuery();
+            
+                if(rs.next()){
+                    
+                        TampilanOperator a = new TampilanOperator();
+                        a.setVisible(true);
+                        a.pack();
+                        a.setLocationRelativeTo(null);
+                        a.lblWelcome.setText("Welcome "+ Email);
+                    this.dispose();
+                    
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Login Gagal");
+                }
+        } catch (SQLException ex) {
+            Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnLoginOperatorActionPerformed
 
     /**
      * @param args the command line arguments

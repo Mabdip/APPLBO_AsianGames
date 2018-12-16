@@ -1,5 +1,11 @@
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -43,7 +49,6 @@ public class FormLoginVolunterr extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(450, 300));
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 51));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -67,6 +72,11 @@ public class FormLoginVolunterr extends javax.swing.JFrame {
         btnLoginVolunteer.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnLoginVolunteer.setForeground(new java.awt.Color(255, 255, 255));
         btnLoginVolunteer.setText("Login");
+        btnLoginVolunteer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginVolunteerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -173,6 +183,40 @@ public class FormLoginVolunterr extends javax.swing.JFrame {
     private void lblMinimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimMouseClicked
        this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_lblMinimMouseClicked
+
+    private void btnLoginVolunteerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginVolunteerActionPerformed
+        PreparedStatement ps;
+        ResultSet rs;
+        
+        String Email = txtEmailVolunteer.getText();
+        String Password = String.valueOf(txtPassVolunteer.getPassword());
+        String query = "SELECT * FROM `volunteer` WHERE `email_volunteer`=? AND `password_volunteer`=?";
+        
+        
+        try {
+            ps = koneksiDB.getConnection().prepareStatement(query);
+            ps.setString(1, Email);
+            ps.setString(2, Password);
+            
+            rs = ps.executeQuery();
+            
+                if(rs.next()){
+                    
+                        TampilanVolunteer a = new TampilanVolunteer();
+                        a.setVisible(true);
+                        a.pack();
+                        a.setLocationRelativeTo(null);
+                        a.lblWelcome.setText("Welcome "+ Email);
+                    this.dispose();
+                    
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Login Gagal");
+                }
+        } catch (SQLException ex) {
+            Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnLoginVolunteerActionPerformed
 
     /**
      * @param args the command line arguments
